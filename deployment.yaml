@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mini-instagram
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mini-instagram
+  template:
+    metadata:
+      labels:
+        app: mini-instagram
+    spec:
+      containers:
+      - name: mini-instagram
+        image: garima111316/mini-instagram:latest
+        ports:
+        - containerPort: 5000
